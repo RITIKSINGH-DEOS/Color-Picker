@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Color Picker</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="color-picker-container">
+        <h1>Choose Your Fav Color</h1>
+        <div class="picker-box">
+            <input type="color" id="colorPicker" class="colorinput">
+           
+            <label for="colorPicker" class="color-label">
+                <span id="colorCode">#FFFF </span>
+            </label>
+            
+        </div>
+        <div class="info">Gradient Color Change Hoga Apna, whenever as you pick the color..</div>
+    </div>
+
+    <script>
+        const colorPicker = document.getElementById("colorPicker");
+        const colorCode = document.getElementById("colorCode");
+        colorPicker.addEventListener("input", function(){
+            const color = colorPicker.value;
+            colorCode.textContent = color.toUpperCase();
+            document.body.style.background = `linear-gradient(45deg,${color}50, ${color})`;
+
+        });
+
+    </script>
+</body>
+</html>
